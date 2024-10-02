@@ -1,4 +1,4 @@
-randomized_text_sound_example.rpy contains the code
+**randomized_text_sound_example.rpy** contains the code
 
 The WEBP files are placeholders for your own artwork
 
