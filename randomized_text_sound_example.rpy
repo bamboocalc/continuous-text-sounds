@@ -4,10 +4,10 @@ init python:
 # This function is optional. Only include it if you want automatic pauses between punctuation
     def typography(what) :
         replacements = [
-                ('. ','. {w=.2}'),
-                ('? ','? {w=.25}'), # Has to be in this order so that -- gets replaced after ---.
-                ('! ','! {w=.25}'),
-                (', ',', {w=.15}'),
+                ('. ','. {w=.2}'), # Moderate pause after periods
+                ('? ','? {w=.25}'), # Long pause after question marks
+                ('! ','! {w=.25}'), # Long pause after exclamation marks
+                (', ',', {w=.15}'), # Short pause after commas
         ]
         for item in replacements:
             what = what.replace(item[0],item[1])
