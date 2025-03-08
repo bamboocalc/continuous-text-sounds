@@ -1,27 +1,40 @@
 init python:
 
-    def sml_speak(event, **kwargs):
-        beeps = 0
-        while beeps < 50: # To avoid an infinite loop
-            randosound = renpy.random.randint(1, 5)
-            if event == "show":
-                if randosound == 1:
-                    renpy.sound.queue("audio/sml1.wav", channel="sound", loop=False)
-                elif randosound == 2:
-                    renpy.sound.queue("audio/sml2.wav", channel="sound", loop=False)
-                elif randosound == 3:
-                    renpy.sound.queue("audio/sml3.wav", channel="sound", loop=False)
-                elif randosound == 4:
-                    renpy.sound.queue("audio/sml4.wav", channel="sound", loop=False)
-                elif randosound == 5:
-                    renpy.sound.queue("audio/beeps/sml5.wav", channel="sound", loop=False)
-            elif event == "slow_done" or event == "end":
-                renpy.sound.stop(channel="sound")
-            beeps += 1
+##############################################################################
+# This function is optional. Only include it if you want automatic pauses between punctuation
+    def typography(what) :
+        replacements = [
+                ('. ','. {w=.2}'),
+                ('? ','? {w=.25}'), # Has to be in this order so that -- gets replaced after ---.
+                ('! ','! {w=.25}'),
+                (', ',', {w=.15}'),
+        ]
+        for item in replacements:
+            what = what.replace(item[0],item[1])
+        return what
+    config.say_menu_text_filter = typography
+##############################################################################
+
+##############################################################################
+    # This function makes the continuous text sounds
+    def text_sounds(event, interact=False, **kwargs):
+        if event == "show": # If textbox is shown
+            what = renpy.store._last_say_what # Grabs the text that was most recently spoken on-screen
+            if what:
+                sound_count = len(what)
+            else:
+                sound_count = 5
+            for _ in range(sound_count): # Creates a sound queue based on how many characters are in the dialog block
+                randosound = renpy.random.randint(1, 11)
+                renpy.sound.queue(f"audio/popcat{randosound}.wav", channel="sound", loop=False)
+        elif event == "end" or event == "slow_done": # If there is a pause in the dialog or the text has finished displaying
+            renpy.sound.stop(channel="sound")
+##############################################################################
 
 image sml neutral = "images/sml.webp"
 
-define sml = Character("Senate Majority Leader", namebox_background="gui/sml_namebox.webp", window_background ="gui/sml_textbox.webp", color="#272020", what_color="#ffeda3", voice_tag="sml", image="sml", callback=sml_speak)
+# Make sure the "callback" function is the same name as our text sounds function
+define sml = Character("Senate Majority Leader", namebox_background="gui/sml_namebox.webp", window_background ="gui/sml_textbox.webp", color="#272020", what_color="#ffeda3", voice_tag="sml", image="sml", callback=text_sounds)
 
 
 label start:
