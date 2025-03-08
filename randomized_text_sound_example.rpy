@@ -26,18 +26,15 @@ init python:
                 sound_count = 5
             for _ in range(sound_count): # Creates a sound queue based on how many characters are in the dialog block
                 randosound = renpy.random.randint(1, 11)
-                renpy.sound.queue(f"audio/sml{randosound}.wav", channel="sound", loop=False)
+                renpy.sound.queue(f"audio/popcat{randosound}.wav", channel="sound", loop=False)
         elif event == "end" or event == "slow_done": # If there is a pause in the dialog or the text has finished displaying
             renpy.sound.stop(channel="sound")
 ##############################################################################
 
-image sml neutral = "images/sml.webp"
-
 # Make sure the "callback" function is the same name as our text sounds function
-define sml = Character("Senate Majority Leader", namebox_background="gui/sml_namebox.webp", window_background ="gui/sml_textbox.webp", color="#272020", what_color="#ffeda3", voice_tag="sml", image="sml", callback=text_sounds)
-
+define e = Character("Eileen", callback=text_sounds)
 
 label start:
-    show sml neutral at center with dissolve
-    sml "cap. gyatt.. . . . .. bussy . . . .sksksksk, rizz, jam, moot, awoooooga. and I , , ,, Ooooooop! Ohio? Yes??!?!?!??!?!?!??!?!?!??!?!?? No more news no more news no more news test . . .. . .. .. CatJam"
+    show eileen neutral at center with dissolve
+    s "cap. gyatt.. . . . .. bussy . . . .sksksksk, rizz, jam, moot, awoooooga. and I , , ,, Ooooooop! Ohio? Yes??!?!?!??!?!?!??!?!?!??!?!?? No more news no more news no more news test . . .. . .. .. CatJam"
     extend " fjks, dh....fjkdsh fjks..d,sh fkjsd. hf , ,  kjdhf  , kjs kjsdhfjk sj kjsdhjfk"
