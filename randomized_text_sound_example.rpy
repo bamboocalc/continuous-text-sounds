@@ -2,7 +2,7 @@ init python:
 
 ##############################################################################
 # This function is optional. Only include it if you want automatic pauses between punctuation
-    def typography(what) :
+    def typography(what):
         replacements = [
                 ('. ','. {w=.2}'), # Moderate pause after periods
                 ('? ','? {w=.25}'), # Long pause after question marks
