@@ -12,7 +12,7 @@ init python:
         for item in replacements:
             what = what.replace(item[0],item[1])
         return what
-    config.say_menu_text_filter = typography
+    config.say_menu_text_filter = typography # This ensure the text block has the same ID value, even after all the replacements are made
 ##############################################################################
 
 ##############################################################################
