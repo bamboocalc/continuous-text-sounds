@@ -39,8 +39,5 @@ define sml = Character("Senate Majority Leader", namebox_background="gui/sml_nam
 
 label start:
     show sml neutral at center with dissolve
-    sml "fjksdhfjkdsh fjksdfh kjsdfhjdksf hksjdfhsjkdfh ksjdfhjskd hfkjdsh fkjsdhf kjsdhf jksdhf kjsdhf kjsdhf kjsdhfjk sdhfkj sdhfkjsfh kjshdf kjsdhjfk"
-    sml "fjksdhfjkdsh fjksdfh kjsdfhjdksf hksjdfhsjkdfh ksjdfhjskd hfkjdsh fkjsdhf kjsdhf jksdhf kjsdhf kjsdhfk"
-    sml "fjksdhfjkdsh fjksjk sdhfkj sdhfkjsfh kjshdf kjsdhjfk"
-    extend " fjksdhfjkdsh fjksdsh fkjsdhf kjdhf kjs kjsdhfjk sj kjsdhjfk"
-    sml "fsd jlkhsdf jlksfd lkjsdf kjlsdf lkjsfdlkjsflkjdfjklsdf fdsfsd"
+    sml "cap. gyatt.. . . . .. bussy . . . .sksksksk, rizz, jam, moot, awoooooga. and I , , ,, Ooooooop! Ohio? Yes??!?!?!??!?!?!??!?!?!??!?!?? No more news no more news no more news test . . .. . .. .. CatJam"
+    extend " fjks, dh....fjkdsh fjks..d,sh fkjsd. hf , ,  kjdhf  , kjs kjsdhfjk sj kjsdhjfk"
