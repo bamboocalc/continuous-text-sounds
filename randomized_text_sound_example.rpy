@@ -40,7 +40,7 @@ define sml = Character("Senate Majority Leader", namebox_background="gui/sml_nam
 label start:
     show sml neutral at center with dissolve
     sml "fjksdhfjkdsh fjksdfh kjsdfhjdksf hksjdfhsjkdfh ksjdfhjskd hfkjdsh fkjsdhf kjsdhf jksdhf kjsdhf kjsdhf kjsdhfjk sdhfkj sdhfkjsfh kjshdf kjsdhjfk"
-    sml "fjksdhfjkdsh {w=.25}fjksdfh {w=.25}kjsdfhjdksf {w=.25}hksjdfhsjkdfh {w=.25}ksjdfhjskd {w=.25}hfkjdsh {w=.25}fkjsdhf {w=.25}kjsdhf {w=.25}jksdhf {w=.25}kjsdhf {w=.25}kjsdhfk"
+    sml "fjksdhfjkdsh fjksdfh kjsdfhjdksf hksjdfhsjkdfh ksjdfhjskd hfkjdsh fkjsdhf kjsdhf jksdhf kjsdhf kjsdhfk"
     sml "fjksdhfjkdsh fjksjk sdhfkj sdhfkjsfh kjshdf kjsdhjfk"
     extend " fjksdhfjkdsh fjksdsh fkjsdhf kjdhf kjs kjsdhfjk sj kjsdhjfk"
-    sml "{cps=15}fsd jlkhsdf jlksfd lkjsdf kjlsdf lkjsfdlkjsflkjdfjklsdf fdsfsd"
+    sml "fsd jlkhsdf jlksfd lkjsdf kjlsdf lkjsfdlkjsflkjdfjklsdf fdsfsd"
