@@ -25,7 +25,7 @@ init python:
             else:
                 sound_count = 5
             for _ in range(sound_count): # Creates a sound queue based on how many characters are in the dialog block
-                randosound = renpy.random.randint(1, 11)
+                randosound = renpy.random.randint(1, 11) # This generates a random number between 1 and 11 inclusive. Change this based on how many sound files you have
                 renpy.sound.queue(f"audio/popcat{randosound}.wav", channel="sound", loop=False)
         elif event == "end" or event == "slow_done": # If there is a pause in the dialog or the text has finished displaying
             renpy.sound.stop(channel="sound")
