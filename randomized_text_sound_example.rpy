@@ -63,7 +63,7 @@ init python:
 
                 for char in chunk:
                     if not char.isspace():
-                        renpy.sound.queue(f"audio/popcat{random.randint(1,11)}.wav",channel="textsound")
+                        renpy.sound.queue(f"audio/popcat{random.randint(1,11)}.wav",channel="textsound") # Replace "audio/popcat{random.randint(1,11)}.wav" with sound files of your choice
                     if pause:
                         renpy.sound.queue(f"<silence {pause}>", channel="textsound")
 
