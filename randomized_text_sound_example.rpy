@@ -18,17 +18,22 @@ init python:
 ##############################################################################
     # This function makes the continuous text sounds
     def text_sounds(event, interact=False, **kwargs):
-        if event == "show": # If textbox is shown
+        if event == "show":  # When textbox is shown
             what = renpy.store._last_say_what # This grabs the text that was most recently spoken on-screen
             if what:
                 sound_count = len(what)
             else:
                 sound_count = 5
-            for _ in range(sound_count): # This creates a sound queue based on how many characters are in the dialog block
+
+            for _ in range(sound_count): # This creates a sound queue based on how many characters are in the dialogue block
                 randosound = renpy.random.randint(1, 11) # This generates a random number between 1 and 11 inclusive. Change this based on how many sound files you have
                 renpy.sound.queue(f"audio/popcat{randosound}.wav", channel="sound", loop=False) # Change "popcat" to the name of your sound file
-        elif event == "end" or event == "slow_done": # This stops the text sounds if there is a pause in the dialog or the text has finished displaying
-            renpy.sound.stop(channel="sound")
+
+        elif event == "end" or event == "slow_done":
+            renpy.sound.stop(channel="sound") # This stops the text sounds if there is a pause in the dialogue or the text has finished displaying
+
+            randosound = renpy.random.randint(1, 11) # This generates a random number between 1 and 11 inclusive. Change this based on how many sound files you have
+            renpy.sound.play(f"audio/popcat{randosound}.wav", channel="sound", loop=False) # This plays one final uninterrupted sound at the end of the dialogue block
 ##############################################################################
 
 ##############################################################################
@@ -84,5 +89,6 @@ label start:
     ce "{cps=7}SLOW SLOW SLOW SLOW SLOW SLOW {/cps} {cps=90}FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST FAST "
     ce " e e e ee e e e ee e e e ee e e  e e e ee e e e ee e e e eee ee e e e ee e e e ee e e e ee e e e ee e e e ee e e e ee e e e ee e e e ee e e e ee e e e ee"
     ce "{cps=90}AA AHAHAH AHAHHA HAHAH AHAH AH HAH AHAH HA HA HAHAHAH AHAH HA HAHAH AH AHHAH AH AH AH AH AH HA H AHAH H AHAH HA HAHAH AH AHHAH AH AH AH AH AH HA H AHAH AH AH"
+
 
 
